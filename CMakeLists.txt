@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.8)
-project(TP_Villes_Confondues)
+cmake_minimum_required(VERSION 2.6)
 
-set(CMAKE_CXX_STANDARD 11)
+project (isotoponyms)
 
-set(SOURCE_FILES main.cpp)
-add_executable(TP_Villes_Confondues ${SOURCE_FILES})
+add_executable (isotopo isotopo.cpp town.cpp point2d.cpp)
+
+add_definitions(-DsrcPath="${CMAKE_CURRENT_SOURCE_DIR}")
