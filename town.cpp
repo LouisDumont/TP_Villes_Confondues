@@ -142,6 +142,13 @@ ostream &operator<<(ostream &os, Town* const &townp) {
 }
 
 
+// Operateur de comparaison pour utiliser les set
+bool Town::operator<(const Town &town) const {
+    bool posInf =(_x < town._x) || (_x==town._x && _y<town._y);
+    bool posEgal=(_x == town._x && _y == town._y );
+    return (posInf || (posEgal && _name < town._name));
+}
+
 /*
  * Lambert93 projection utilities
  */
@@ -199,3 +206,5 @@ pair<float,float> geoToLambert93(float latitude,float longitude)
     float y93 = ys - c*exp(-n*gl)*cos(n*(l-lc));
     return make_pair(x93/1000,y93/1000);
 }
+
+

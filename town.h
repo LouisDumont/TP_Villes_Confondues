@@ -52,6 +52,8 @@ public:
     inline float y() const { return _y; }
     // Return the 2D point coordinates (in Lambert 93 projection)
     inline Point2D point() const { return Point2D(_x,_y); }
+    // Operateur de comparaison pour utiliser les set
+    bool operator<(const Town &town) const;
 
     // Return the distance to given town (in kilometers)
     float dist(const Town town) const;
